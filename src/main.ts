@@ -1,15 +1,7 @@
-import { App, Stack, StackProps } from 'aws-cdk-lib';
-import { Construct } from 'constructs';
+import { App } from 'aws-cdk-lib';
+import { CognitoSendGridStack } from './stacks/cognito-sendgrid-stack';
+import { DeploymentStage } from './types';
 
-export class MyStack extends Stack {
-  constructor(scope: Construct, id: string, props: StackProps = {}) {
-    super(scope, id, props);
-
-    // define resources here...
-  }
-}
-
-// for development, use account/region from cdk cli
 const devEnv = {
   account: process.env.CDK_DEFAULT_ACCOUNT,
   region: process.env.CDK_DEFAULT_REGION,
@@ -17,7 +9,12 @@ const devEnv = {
 
 const app = new App();
 
-new MyStack(app, 'firstblox-cdk-ts-cognito-sendgrid-dev', { env: devEnv });
-// new MyStack(app, 'firstblox-cdk-ts-cognito-sendgrid-prod', { env: prodEnv });
+new CognitoSendGridStack(app, 'firstblox-cdk-ts-cognito-sendgrid-dev', {
+  env: devEnv,
+  stage: DeploymentStage.DEV,
+  applicationName: 'cognito-sendgrid-poc', // TODO: replace with your application name. Resources like SSM param names interpolate this.
+  noReplyEmailAddress: 'noreply@firstblox.com', // TODO: Replace with a noreply email address validated in SendGrid.
+  errorNotificationEmail: 'lorcan@firstblox.com' // TODO: Replace with email address to receive failure events from Cognito Lambda trigger.
+});
 
 app.synth();

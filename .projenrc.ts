@@ -4,10 +4,19 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   defaultReleaseBranch: 'main',
   name: 'firstblox-cdk-ts-cognito-sendgrid',
   projenrcTs: true,
-
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  devDeps: [
+    '@types/aws-lambda',
+    'aws-lambda',
+  ],
+  deps: [
+    'ejs',
+    '@types/ejs',
+    '@aws-sdk/client-cognito-identity-provider',
+    '@aws-crypto/client-node',
+    '@aws-sdk/client-ssm',
+    '@aws-sdk/util-base64-node',
+    '@sendgrid/mail',
+  ],
 });
+
 project.synth();

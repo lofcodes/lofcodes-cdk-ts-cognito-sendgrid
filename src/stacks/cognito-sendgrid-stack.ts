@@ -38,7 +38,7 @@ export class CognitoSendGridStack extends cdk.Stack {
     const failureTopic = new sns.Topic(this, `${this.stackName}-failure-topic`);
     failureTopic.addSubscription(new sns_subscriptions.EmailSubscription(props.errorNotificationEmail));
 
-    const sendGridAPIKeyParameterName = `/${props.applicationName}/sendGrid/apiKey/${props.stage}`
+    const sendGridAPIKeyParameterName = `/${props.applicationName}/sendGrid/apiKey/${props.stage}`;
 
     new customResources.AwsCustomResource(this, `${this.stackName}-sendgrid-api-key`, {
       onCreate: {

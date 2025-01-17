@@ -214,13 +214,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/aws-lambda,@types/jest,@types/node,aws-lambda,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,projen,ts-jest,ts-node,typescript,@aws-crypto/client-node,@aws-sdk/client-cognito-identity-provider,@aws-sdk/client-ssm,@aws-sdk/util-base64-node,@sendgrid/mail,@types/ejs,ejs"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,projen,ts-jest,ts-node,typescript,@aws-crypto/client-node,@aws-sdk/client-cognito-identity-provider,@aws-sdk/client-ssm,@aws-sdk/util-base64-node,@sendgrid/mail,@types/aws-lambda,@types/ejs,aws-lambda,ejs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @stylistic/eslint-plugin @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk aws-lambda esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit projen ts-jest ts-node typescript @aws-crypto/client-node @aws-sdk/client-cognito-identity-provider @aws-sdk/client-ssm @aws-sdk/util-base64-node @sendgrid/mail @types/ejs aws-cdk-lib constructs ejs"
+          "exec": "yarn upgrade @stylistic/eslint-plugin @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit projen ts-jest ts-node typescript @aws-crypto/client-node @aws-sdk/client-cognito-identity-provider @aws-sdk/client-ssm @aws-sdk/util-base64-node @sendgrid/mail @types/aws-lambda @types/ejs aws-cdk-lib aws-lambda constructs ejs"
         },
         {
           "exec": "npx projen"

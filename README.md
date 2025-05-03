@@ -15,8 +15,6 @@ Utilise SendGrid as the email sender when using Cognito, developed using CDK TS.
 
 ![Title](docs/images/title-card.png)
 
-This repository is the supporting code for this blog post [].
-
 > [!IMPORTANT]
 > This codebase is provided to showcase fuctionality and is NOT considered production ready.
 
